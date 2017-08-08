@@ -1,0 +1,15 @@
+<body>
+  <div>
+    <h1>Add todo</h1><br>
+    <input type="text" [(ngModel)]="text">
+    <button type="button" (click)="addTodo()">Add</button>
+    <br><h3>todo list</h3><br>
+    <ul>
+       <li *ngFor="let item of items | async"> 
+        <!-- {{item.text}}<button id="buttons" (click)="deleteTodo(todo.text)">Delete</button> -->
+         {{item.text}}<button id="buttons" (click)="deleteValue(item.$key)">Delete</button> 
+
+      </li>
+      </ul>
+  </div>
+</body>
